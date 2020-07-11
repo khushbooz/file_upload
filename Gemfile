@@ -13,6 +13,7 @@ gem 'sqlite3'
 gem 'mysql2', '~> 0.3.20'
 # For file uploads
 gem 'carrierwave', '~> 2.0'
+gem "fog-aws"
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
