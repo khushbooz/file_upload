@@ -3,33 +3,42 @@
 <div>
   <p>Total Users: <%= @users_count %> </p>    
 </div>
-
+</br>
 <div>
   <% if user_signed_in? %>
     <div>
         <% if @uploads.exists? %>
-          <p> Uploaded Files </p>
+          <p> Uploaded Files: </p>
           <% @uploads.each do |file| %>
-            <p> <%= file.id %> </p>
+            <div>
+              <div>
+                <% file.avatars.each do |f| %>
+                  <span> <%= f.to_s %> , </span>
+                <% end %>
+              </div>
+            </div>
           <% end %>
         <% else %>
-          <p> No Uploads found </p>
+          <p> No file uploads found for this user. </p>
         <% end %>
     </div>
+    </br>
     <div>
-      <p> Upload Your Files Here, </p>
+      <p> You can upload your files (png/pdf/jpg/jpeg) here, </p>
       <div>
         <%= form_for(@upload) do |f| %>
           <div>
             <%= f.label :file, "File *" %>
             <%= f.file_field(:avatars, :accept => "png/pdf/jpg/jpeg", multiple: true) %>
           </div>
+          </br></br>
           <div>
             <%= f.submit 'Upload File' %>
           </div>
         <% end %>
       </div>
     </div>
+    </br></br>
     <li>
       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
     </li>
