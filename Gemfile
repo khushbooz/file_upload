@@ -12,7 +12,7 @@ gem 'rails', '~> 5.1.7'
 gem 'sqlite3'
 gem 'mysql2', '~> 0.3.20'
 # For file uploads
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem "fog-aws"
 
 # Use Puma as the app server
